@@ -24,10 +24,7 @@ const RellenarProductos = (Productos) => {
             <p class="cod_producto">Código: ${codigo}</p>
             <p class="card-text card__description">${descripcion}</p>
             <p class="price_producto">Precio: $${precio}</p>
-            <div class="form-outline">
-            <input type="number" value = "1" class="form-control " />
-              <label class="form-label" for="cantProducto"></label>
-            </div>
+            <label class="form-label" for="cantProducto">Cantidad:<input type="number" value = "1" class="form-control" /></label>
           </div>
           <div class="card__end">
             <a href="#" class="button--secondary button--card">Add to cart</a>

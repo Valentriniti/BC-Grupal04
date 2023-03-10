@@ -210,6 +210,25 @@ img {
   justify-content: center;
 }
 
+.price_producto {
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  font-size: 100%;
+  font-weight: 700;
+  color: #00ad91;
+}
+
+.cod_producto {
+  margin-bottom: 0.5em;
+}
+
+.form-control {
+  /*     border-bottom: 1px solid colors.$dark;
+      border-radius: 5px; */
+  margin: 0em 0.5em;
+  width: 30%;
+}
+
 #cardTotalizador {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
