@@ -1,0 +1,59 @@
+//Importa mixins, variables y colores de abstract 
+
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+@use '../abstracts/colors';
+
+//Footer Nesting 
+
+.footer{
+    background-color: colors.$dark; 
+    font-weight: variables.$wfont-thin;
+    text-align: center;
+    padding: 2em 0;
+    flex-direction: column;
+    &__listgroup{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1em;
+        color: colors.$white;
+        font-weight: variables.$wfont-light;
+    }
+    &__year{
+        color: colors.$green;
+        font-weight: variables.$wfont-bold;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+}
+
+/* Media Queries */
+
+/* Tablet 768px*/
+
+@media screen and (min-width: 768px){
+    .footer__listgroup{
+        flex-direction: row;
+    }
+    .team{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/* Desktop 1200px*/
+
+@media screen and (min-width: 1200px){
+    .footer__year{
+        padding-bottom: 3em;
+    }
+    .footer__item{
+        margin: 0 1.5em;
+    }
+}
+

@@ -1,0 +1,80 @@
+//Importa mixins, variables y colores de abstract 
+
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+@use '../abstracts/colors';
+
+
+//Button Nesting
+
+.button{
+    display: block;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    @include mixins.border;
+    margin: 1em auto;
+    font-size: variables.$font-L;
+    font-weight: variables.$wfont-medium;
+    letter-spacing: 1px;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    &--primary{
+        @include mixins.button-setColor(colors.$green);
+        @include mixins.border;
+        &:hover{
+            @include mixins.button-setColor(colors.$white,colors.$green);
+            ion-icon{
+                color: colors.$white;
+            }
+        }
+    }
+    &--secondary{
+        @include mixins.button-setColor(colors.$white,colors.$green);
+        @include mixins.border;
+        &:hover{
+            @include mixins.button-setColor(colors.$green,rgba(0, 175, 145, 0.1));
+        }
+    }
+    &--card{
+        display: block;
+        padding: 0.5em;
+       /*  align-items: baseline; */
+        text-align: center;
+        border-radius: 4px;
+        margin: 1em;
+        box-sizing: border-box;
+        width: 90%;
+        cursor: pointer;
+    }
+
+    &--catalog {
+        width: 100%;
+        margin: 2em auto;
+    }
+}
+
+/* Media Queries */
+
+/* Tablet 768px*/
+@media screen and (min-width: 768px){
+    .button{
+        max-width: 50%;
+        &--catalog {
+            width: 70%;
+        }
+    }
+
+}
+
+/* Desktop 1200px */
+@media screen and (min-width: 1200px){
+    .button{
+        max-width: 50%;
+        &--catalog {
+            width: 60%;
+        }
+    }    
+}

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cachureando Store - Inicio</title>
+  <link rel="stylesheet" href="./css/estilo.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/site.webmanifest">
+<!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!-- JS -->
+  <script src="./js/main.js" defer></script>
+  <script src="./js/qualify.js" defer></script>
+  <script src="./js/bootstrap.min.js" defer></script>
+  <script type="module" src="./js/Productos.js" defer></script>
+  <script type="module" src="./js/carritoCompras.js" defer></script>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header__element">
+    <a class="header__link" href="./index.html">
+      <img class="header__icon" id="logo-collapsed" src="./img/logo-collapsed.svg" alt="Logo Pequeño" width="30"> 
+    </a>
+    <h1 class="header__title">Cachureando</h1> 
+  </div> 
+  <button class = "header__menuHambur" id="burger"><img  src="./img/burger.svg" width="25px" alt="burger"></button>
+  <img  class="header__logo" src="./img/logo.svg" width="200" alt="Logo Cachureos">
+  
+  <!--  nav -->
+  <nav class="header__nav navFix"   role="navigation">
+      <ul class="header__list header__list--hide" id="menu">
+        <li class="header__item">
+          <a class="header__link--active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="./index.html#quienessomos">Somos</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="./productos.html">Productos</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="./formulario.html">Contacto</a>
+        </li>
+        <li class="header__item">
+          <img class="carritoCompras" src="./img/icon-shopping.png" alt="icono carrito de compras" >
+        </li>
+      </ul>
+      <div id="cardTotalizador"></div>
+  </nav>    
+</header>
+
+<!-- Carousel -->
+
+<section id="carousel" class="carousel  slide" data-bs-ride="carousel" >
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="./img/c01.jpg" alt="">
+    </div>
+    <div class="carousel-item"><img class="d-block w-100" src="./img/c02.jpg" alt=""></div>
+    <div class="carousel-item"><img class="d-block w-100" src="./img/c03.jpg" alt=""></div>
+    <div class="carousel-item"><img class="d-block w-100" src="./img/c04.jpg" alt=""></div>
+  </div>
+
+
+</section>
+
+<!-- Main -->
+  <main>
+
+    <!--   Quienes somos -->
+    <section class="section" id="quienessomos">
+      <img class="img section__img" src="./img/somos.svg" alt="Imagen de Somos">
+      <h2 class="section__title">Quiénes Somos</h2>
+      <p class="section__text">Somos una empresa dedicada a la venta de productos con estilo,
+        conformado por un equipo de jóvenes con ganas de entregar
+        productos únicos e impresionantes para quienes busquen algo
+        irrepetible y personalizado</p>
+    </section>
+
+    <!--     Envios -->
+    <div class="wrapper--green js-scroll fade-in-bottom">
+      <section class="section">
+        <img class="img section__img" src="./img/envios.svg" alt="Imagen de Somos">
+        <h2 class="section__title">Envíos</h2>
+        <p class="section__text">Nuestros envíos son realizados a través de Chilexpress y
+          Starken, empaquetados firmemente para que tus productos
+          lleguen intactos y seguros a tu hogar. Puedes realizar
+          seguimientos para cada uno de tus envíos utilizando el código que te enviaremos a tu correo electrónico
+        </p>
+      </section>
+    </div>
+    
+<!-- Catalogo -->
+    <section class="section section--2col">
+
+        <!-- columna texto -->
+        <div class="catalog js-scroll slide-left">
+          <h2 class="section__title section__title--responsiveleft">Catálogo</h2>
+          <p class="section__text section__text--responsiveleft">Echa un vistazo a nuestros productos principales, elaborados utilizando procesos sustentables y manuales,
+              con materiales de alta calidad que garantizan duración, excelencia. Con estilos que no encontrarás en
+              otras tiendas. Si deseas personalizar tus productos, no dudes en contactarnos.
+            </p>
+              
+            <a href="./productos.html" class="button--secondary button--card button--catalog">Conoce nuestros productos</a>
+        </div>
+
+        <!-- columna fotos -->
+        <div class="galeria js-scroll slide-right">
+            <img src="./img/p01.jpg" class="img galeria__img" alt="Producto 01">
+            <img src="./img/p02.jpg" class="img galeria__img" alt="Producto 02">              
+            <img src="./img/p03.jpg" class="img galeria__img" alt="Producto 03">
+            <img src="./img/p04.jpg" class="img galeria__img" alt="Producto 04">
+          </div>
+    </section>
+
+<!-- Contacto -->
+<div class="wrapper--green js-scroll fade-in-bottom">
+  <section class="section">
+      <h3 class="section__subtitle">¿Quieres más información?</h3>
+      <a class="button button--primary" href="./formulario.html">
+        ¡Hablemos!
+      </a>
+  </section>
+</div>
+    
+<!-- Calificacion -->
+    <section class="section js-scroll fade-in-bottom">
+      <h3 class="section__subtitle">Del 1 al 10 ¿Cómo evalúas nuestro servicio?</h3> 
+      <form class="section__qualification"> 
+        <input id="myinput" type="range" min="0" max="10" step="1" value="10" placeholder="10"/>
+        <output id="value"></output>
+      </form>
+      <!-- Calificación sin jQuery -->
+      <!-- <input class = "section__input" type="text" id="qual" placeholder="Ingrese una calificación"> -->
+      <button onclick="qualification()" class="button button--secondary">ENVIAR</button>
+      <div class="section__result" id="result"> </div>
+      <div class="section__numresult" id="numresult"> </div >
+    </section>
+
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+
+    <!-- Equipo -->
+    <div class="team">
+      <ul class="footer__listgroup">
+        <li class="footer__item ">Manuel Alfaro</li>
+        <li class="footer__item">Javiera Córdova</li>
+        <li class="footer__item">Valentina Roco</li>
+        <li class="footer__item">Gabriela Soto</li>
+      </ul>
+  
+      <!-- Redes sociales -->
+      <div class="footer_socialMedia">
+        <a href="https://www.instagram.com/">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>  
+        <a href="https://www.facebook.com/">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>    
+        <a href="https://twitter.com/?lang=es">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- Fecha -->
+    <div class="footer__date">
+      <p class="footer__year" id="year"></p>
+    </div>  
+
+  </footer>
+
+  <!-- Link JS jQuery -->
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+  <script src="./js/jquery.goup.js"></script>
+
+  <!-- Link iconografía redes sociales -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+// Arquitectura 7-1
+
+@use 'abstracts/variables';
+// @use 'abstracts/functions';
+@use 'abstracts/colors';
+@use 'abstracts/mixins';
+// @use 'abstracts/placeholders';
+@use 'abstracts/animations';
+
+
+
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'components/buttons';
+@use 'components/icons';
+@use 'components/images';
+@use 'components/wrapper';
+@use 'components/cards';
+@use 'components/cardTotalizador';
+
+@use 'components/carousel';
+// @use 'components/cover';
+// @use 'components/dropdown';
+@use 'components/inputRange';
+
+@use 'layout/navigation';
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/forms';
+@use 'layout/main';
+
+
+// @use 'layout/sidebar';
+
+
+
+// @use 'pages/home';
+// @use 'pages/contact';
+
+// @use 'themes/theme';
+
+// @use 'themes/admin';
+
+@import 'vendors/bootstrap';
+// @use 'vendors/jquery-ui';

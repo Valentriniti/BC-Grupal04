@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cachureando Store - Productos</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+  <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- JS -->
+    <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/Productos.js"></script>
+    <script type="module" src="./js/carritoCompras.js"></script>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header__element">
+    <a class="header__link" href="./index.html">
+      <img class="header__icon" id="logo-collapsed" src="./img/logo-collapsed.svg" alt="Logo Pequeño" width="30"> 
+    </a>
+    <h1 class="header__title">Cachureando</h1> 
+  </div> 
+  <button class = "header__menuHambur" id="burger"><img  src="./img/burger.svg" width="25px" alt="burger"></button>
+  <img  class="header__logo" src="./img/logo.svg" width="200" alt="Logo Cachureos">
+  
+  <!--  nav -->
+  <nav class="header__nav navFix"   role="navigation">
+      <ul class="header__list header__list--hide" id="menu">
+        <li class="header__item">
+          <a class="header__link" aria-current="page" href="./index.html">Inicio</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="./index.html#quienessomos">Somos</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link--active" href="./productos.html">Productos</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="./formulario.html">Contacto</a>
+        </li>
+        <li class="header__item">
+          <img class="carritoCompras" src="./img/icon-shopping.png" alt="icono carrito de compras" >
+        </li>
+      </ul>
+      <div id="cardTotalizador"></div>
+  </nav>    
+</header>
+
+  <!-- main   -->
+  <main>
+    <section class="section">
+      <h2 class="section__title">Nuestros Productos</h2>
+      <p class="section__text">
+        Explora aquí todo nuestro catálogo de productos. Si no encuentras lo
+        que buscas, escríbenos en nuestra sección de Contacto ;
+      </p>
+
+      <!-- Sección cards productos -->
+      <div class="card__row js-scroll fade-in-bottom">
+        <div
+          class="row row-cols-1 row-cols-md-2 row-cols-xl-3 contenedorCards"
+        ></div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <!-- Equipo -->
+    <div class="team">
+      <ul class="footer__listgroup">
+        <li class="footer__item ">Manuel Alfaro</li>
+        <li class="footer__item">Javiera Córdova</li>
+        <li class="footer__item">Valentina Roco</li>
+        <li class="footer__item">Gabriela Soto</li>
+      </ul>
+  
+      <!-- Redes sociales -->
+      <div class="footer_socialMedia">
+        <a href="https://www.instagram.com/">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>  
+        <a href="https://www.facebook.com/">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>    
+        <a href="https://twitter.com/?lang=es">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- Fecha -->
+    <div class="footer__date">
+      <p class="footer__year" id="year"></p>
+    </div>  
+
+  </footer>
+
+  <!-- Link JS jQuery -->
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+  <script src="./js/jquery.goup.js"></script>
+
+  <!-- Link iconografía redes sociales -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
