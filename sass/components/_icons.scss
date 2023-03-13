@@ -17,7 +17,21 @@ ion-icon {
     }
 }
 
-.carritoCompras{
+.carritoComprasIcon{
     max-width: 1.5em;
     max-height: 1.5em;
+}
+
+.iconCarroShow{
+    display: flex;
+}
+
+.iconCarroHide{
+    display: none;
+}
+
+#eliminarEnCarrito{
+    color: black;
+    border: none;
+    font-size: 1.2em;
 }
