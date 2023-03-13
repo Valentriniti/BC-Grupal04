@@ -56,6 +56,19 @@
     }
 }
 
+.finalizaCompra{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    @include mixins.border;
+    margin: 1em auto;
+    font-size: .8em;
+    letter-spacing: 1px;
+    width: 100%;
+    
+}
+
 /* Media Queries */
 
 /* Tablet 768px*/

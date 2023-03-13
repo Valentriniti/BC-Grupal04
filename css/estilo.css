@@ -144,6 +144,18 @@ body {
   margin: 2em auto;
 }
 
+.finalizaCompra {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid #00ad91;
+  margin: 1em auto;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
 /* Media Queries */
 /* Tablet 768px*/
 @media screen and (min-width: 768px) {
@@ -177,9 +189,23 @@ ion-icon:hover {
   cursor: pointer;
 }
 
-.carritoCompras {
+.carritoComprasIcon {
   max-width: 1.5em;
   max-height: 1.5em;
+}
+
+.iconCarroShow {
+  display: flex;
+}
+
+.iconCarroHide {
+  display: none;
+}
+
+#eliminarEnCarrito {
+  color: black;
+  border: none;
+  font-size: 1.2em;
 }
 
 img {
@@ -247,21 +273,32 @@ img {
   width: 3rem;
 }
 
+.contenedorCarritoShow {
+  visibility: visible;
+}
+
+.contCarritoHide {
+  visibility: hidden;
+}
+
 .card-producto {
   display: flex;
-  margin: 1rem 0.2rem;
   align-items: center;
-  justify-content: space-between;
-  padding-right: 2rem;
+  justify-content: space-around;
   font-size: 1rem;
-  width: 100%;
+  margin: 0;
 }
 
 .titulocarrito {
+  width: 23rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 0.9rem;
+  justify-content: space-around;
+  font-size: 0.8em;
+}
+
+.imagenyTitulo {
+  width: 5em;
 }
 
 .centrado {
@@ -269,6 +306,53 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.centradoFlex {
+  display: flex;
+}
+
+.sinProductos {
+  font-size: 1.1rem;
+  margin: 1.5em 2em;
+}
+
+.tituloEnCarro {
+  width: 50%;
+  text-align: center;
+}
+
+.cantidadenCarrito {
+  font-size: 1.2em;
+  margin: 0.2em 0.3em 0 0;
+}
+
+.sumaCantidadCarrito {
+  width: 50%;
+  text-align: center;
+  color: red;
+}
+
+.restaCantidadCarrito {
+  color: blue;
+  width: 50%;
+  text-align: center;
+  border-left: 1px solid black;
+}
+
+.modificaCantidad {
+  height: auto;
+  max-height: 1.4em;
+  margin: 0.3em 0 0 0.2em;
+  display: flex;
+  width: 3em;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 0.1 0.1em;
+}
+
+.montoaPagar {
+  font-size: 0.9em;
 }
 
 #carousel {
