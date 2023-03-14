@@ -94,7 +94,7 @@ const MostrarCarrito = (Carrito) => {
   //Mostar los productos en el carrito
 
   if (Carrito) {
-    Carrito.forEach((productoCarrito) => {              
+    Carrito.forEach((productoCarrito, i) => {              
       const { nombre, valorProducto, imagenProducto, cantidad} = productoCarrito;
       let valorFinal = cantidad*valorProducto;
       const div = document.createElement('div');
@@ -107,13 +107,18 @@ const MostrarCarrito = (Carrito) => {
       <div class="centradoFlex" >
         <p class= "cantidadenCarrito">${cantidad}</p>  
         <div class="modificaCantidad" >
-          <p class = "sumaCantidadCarrito">+</p>  
-          <p class = "restaCantidadCarrito">-</p>  
+          <p class = "sumaCantidadCarrito" onclick="sumarCantidad(${i})">+</p>  
+          <p class = "restaCantidadCarrito" onclick="restarCantidad(${i})">-</p>  
         </div>
       </div>
       <p>${valorFinal}</p>
-      <ion-icon id="eliminarEnCarrito" name="trash-outline"></ion-icon>
+      <ion-icon id="eliminarEnCarrito" name="trash-outline" onclick="borrarElemento(${i})"></ion-icon>
         `;
+
+        // Lo borra si queda vacío
+        if (cantidad === 0) {
+          div.innerHTML = "";
+        }
 
         const totalizador = document.createElement('div');
           totalizador.classList = 'total';
@@ -187,3 +192,19 @@ const EditarCarrito = (id, Carrito, cantidad) => {
   return Carrito;
 };
 
+// Modifica cantidades
+
+window.sumarCantidad = (e) => {
+  Carrito[e].cantidad++;
+  MostrarCarrito(Carrito);
+}
+
+window.restarCantidad = (e) => {
+  Carrito[e].cantidad--;
+  MostrarCarrito(Carrito);
+}
+
+window.borrarElemento = (e) => {
+  Carrito[e].cantidad = 0;
+  MostrarCarrito(Carrito);
+}
