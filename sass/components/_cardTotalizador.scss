@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: space-around;
   font-size: 1rem;
-  margin: 0;
+  margin-bottom: 1em;
 }
 
 .titulocarrito {
@@ -65,23 +65,27 @@
 }
 
 .tituloEnCarro{
-  width: 50%;
-  text-align: center; 
+  width: 100%;
+  text-align: left; 
+  margin-bottom: 0.5em;
 }
 
 .cantidadenCarrito{
-  font-size: 1.2em;
-  margin: .2em .3em 0 0  ;
+  font-size: variables.$font-xS;
+  font-weight: variables.$wfont-medium;
+  padding-top: 0.4em;
+  padding-right: 0.5em;
+  color: colors.$green;
 }
 
 .sumaCantidadCarrito{
   width: 50%;
   text-align: center;
-  color: red;
+  color: colors.$green;
 }
 
 .restaCantidadCarrito{
-  color: blue;
+  color: colors.$green;
   width: 50%;
   text-align: center;
   border-left: 1px solid black;
@@ -93,11 +97,26 @@
   margin: .3em 0 0 .2em;
   display: flex;
   width: 3em;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 15px;
   padding: .1 .1em;
 }
 
 .montoaPagar{
-  font-size: .9em;
+  font-size: variables.$font-M;
+  text-align: left;
+  margin-bottom: 0.2em;
+  &--total {
+    font-weight: variables.$wfont-medium;
+    color: colors.$green;
+  }
+}
+
+
+.resumenCompra{
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  margin: 2em 0em;
+   border-top: 1px solid colors.$green;
 }
