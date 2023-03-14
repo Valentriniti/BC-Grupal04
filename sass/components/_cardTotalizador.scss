@@ -10,8 +10,9 @@
   right: 5rem;
   width: 24rem;
   min-height: 10rem;
-  //   height: 20em;
-  font-size: 1.3em;
+  max-height: 90vh;
+  overflow-y: scroll;
+  font-size: 1em;
   padding: 1em;
   z-index: 200;
   color: black;
@@ -34,12 +35,10 @@
   align-items: center;
   justify-content: space-around;
   font-size: 1rem;
-
   margin: 0;
 }
 
 .titulocarrito {
-  width: 23rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
