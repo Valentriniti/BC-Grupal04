@@ -3,17 +3,15 @@
 @use '../abstracts/variables';
 
 #cardTotalizador {
-  background-color: white;
+  background-color: colors.$white;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0 0 0.7rem 0.7rem;
-  position: absolute;
-  right: 5rem;
-  width: 24rem;
-  min-height: 10rem;
-  max-height: 90vh;
+  max-width: 35rem;
+  margin:  0 auto;
+  max-height: 50vh;
   overflow-y: scroll;
   font-size: 1em;
-  padding: 1em;
+  padding: 1em; 
   z-index: 200;
   color: black;
 }
@@ -34,8 +32,9 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 1rem;
-  margin-bottom: 1em;
+  font-size: .8rem;
+  margin: 0;
+
 }
 
 .titulocarrito {
@@ -46,7 +45,7 @@
 }
 
 .imagenyTitulo{
-  width: 5em;
+  width: 4em;
 }
 
 .centrado {
@@ -57,6 +56,8 @@
 }
 .centradoFlex{
   display: flex;
+  width: 3.5em;
+  height: 1.5em;
 }
 
 .sinProductos{
@@ -71,11 +72,9 @@
 }
 
 .cantidadenCarrito{
-  font-size: variables.$font-xS;
-  font-weight: variables.$wfont-medium;
-  padding-top: 0.4em;
-  padding-right: 0.5em;
-  color: colors.$green;
+  font-size: 1em;
+  margin: .4em .3em 0 0  ;
+
 }
 
 .sumaCantidadCarrito{
@@ -103,20 +102,62 @@
 }
 
 .montoaPagar{
-  font-size: variables.$font-M;
-  text-align: left;
-  margin-bottom: 0.2em;
-  &--total {
-    font-weight: variables.$wfont-medium;
-    color: colors.$green;
-  }
+  font-size: .9em;
 }
 
+@media screen and (min-width: 768px) {
+  #cardTotalizador {
+    position: absolute;
+    right: 5rem;
+    width: 24rem;
+    min-height: 10rem;
+    max-height: 90vh;
+    font-size: 1em;
+    padding: 1em;
+    z-index: 200;
+  }
+  
+  #cardTotalizador img {
+    width: 3rem;
+  }
+  
+  .card-producto {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .titulocarrito {
+    font-size: .8em;
+  }
+  
+  .imagenyTitulo{
+    width: 5em;
+  }
+  
+  .sinProductos{
+    font-size: 1.1rem;
+    margin: 1.5em 2em;
+  }
+  
+  .tituloEnCarro{
+    width: 50%;
+  }
+  
+  .cantidadenCarrito{
+    font-size: 1.2em;
+    margin: .2em .3em 0 0;
+  }
+    
+  .modificaCantidad{
+    height: auto;
+    max-height: 1.4em;
+    margin: .3em 0 0 .2em;
+    width: 3em;
+    padding: .1 .1em;
+  }
+  
+  .montoaPagar{
+    font-size: .9em;
+  }
 
-.resumenCompra{
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-  margin: 2em 0em;
-   border-top: 1px solid colors.$green;
 }

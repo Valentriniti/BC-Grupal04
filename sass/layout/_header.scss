@@ -45,9 +45,15 @@
     &__logo {
         display: none;
     }
-    
+    &__iconos{
+        margin-top: .5em;
+    }
+    &__iconocarrito {
+        padding-right: 1em;
+    }
     &__menuHambur {
         padding-right: 1em;
+        margin-left: 1em;
     }
     &__item{
         margin: 0 1.5em;
@@ -60,7 +66,6 @@
             cursor: pointer;
         }
     }
-    
     &__list--hide {
         display: none;
     }
@@ -68,7 +73,12 @@
     &list--show {
         display: flex;
     }
+
+    .iconocarritoinNav{
+        display: none;
+    }
 }
+
 
 
 /* Media Queries */
@@ -106,6 +116,10 @@
         @include mixins.border-bottom(1px);
         }
 
+        &__iconocarrito{
+            display: none;
+        }
+
         &__menuHambur {
         display: none;
         }
@@ -116,6 +130,9 @@
 
         &__list--hide {
         display: flex;
+        }
+        .iconocarritoinNav{
+            display: block;
         }
     }
     }
