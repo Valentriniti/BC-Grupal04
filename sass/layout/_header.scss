@@ -9,7 +9,6 @@
     height: 3.2em;
     width: 100%;
     justify-content: space-between;
-    @include mixins.border-bottom;
     position: fixed;
     z-index: 400;
     background-color: colors.$white;
@@ -105,6 +104,7 @@
 
         &__nav {
         position: static;
+        @include mixins.border-bottom(1px);
         }
 
         &__fix {
