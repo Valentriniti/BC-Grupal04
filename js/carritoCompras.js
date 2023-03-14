@@ -29,7 +29,7 @@ const RellenarProductos = (Productos) => {
             <label class="form-label" for="cantProducto">Cantidad:<input type="number" value = "1" class="form-control" /></label>
           </div>
           <div class="card__end">
-            <a href="#" class="button--secondary button--card">Add to cart</a>
+            <a href="#" class="button--secondary button--card">Agregar al Carro</a>
           </div>
       </div>
     `;
@@ -44,6 +44,7 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach((card) => {
   card.addEventListener('click', (e) => {
+    contenedorCarrito.classList.remove('contCarritoHide');
     e.preventDefault();
     if (e.target.classList.contains('button--secondary')) {
       let nombre = e.currentTarget.querySelector('.card-title').textContent;
@@ -94,7 +95,7 @@ const MostrarCarrito = (Carrito) => {
   //Mostar los productos en el carrito
 
   if (Carrito) {
-    Carrito.forEach((productoCarrito) => {              
+    Carrito.forEach((productoCarrito, i) => {              
       const { nombre, valorProducto, imagenProducto, cantidad} = productoCarrito;
       let valorFinal = cantidad*valorProducto;
       const div = document.createElement('div');
@@ -107,18 +108,23 @@ const MostrarCarrito = (Carrito) => {
       <div class="centradoFlex" >
         <p class= "cantidadenCarrito">${cantidad}</p>  
         <div class="modificaCantidad" >
-          <p class = "sumaCantidadCarrito">+</p>  
-          <p class = "restaCantidadCarrito">-</p>  
+          <p class = "sumaCantidadCarrito" onclick="sumarCantidad(${i})">+</p>  
+          <p class = "restaCantidadCarrito" onclick="restarCantidad(${i})">-</p>  
         </div>
       </div>
       <p>${valorFinal}</p>
-      <ion-icon id="eliminarEnCarrito" name="trash-outline"></ion-icon>
+      <ion-icon id="eliminarEnCarrito" name="trash-outline" onclick="borrarElemento(${i})"></ion-icon>
         `;
+
+        // Lo borra si queda vacío
+        if (cantidad === 0) {
+          div.innerHTML = "";
+        }
 
         const totalizador = document.createElement('div');
           totalizador.classList = 'total';
           totalizador.innerHTML = `
-            <p class= "montoaPagar">Subtotal: </p>
+            <p class= "montoaPagar">Subtotal:</p>
             <p class= "montoaPagar">Impuesto: </p>  
             <p class= "montoaPagar">Total: </p>
             <a class = "finalizaCompra">Finalizar Compra</a>
@@ -155,8 +161,8 @@ const MostrarCarrito = (Carrito) => {
   totalizador.classList = 'total';
   totalizador.innerHTML = `
       <p class= "montoaPagar">Subtotal: $${formatearDinero(Subtotal)} </p>
-      <p class= "montoaPagar">Impuesto:$${formatearDinero(Impuestos)} </p>  
-      <p class= "montoaPagar">Total:$${formatearDinero(Total)} </p>
+      <p class= "montoaPagar">Impuesto: $${formatearDinero(Impuestos)} </p>  
+      <p class= "montoaPagar">Total: $${formatearDinero(Total)} </p>
       <a class = "finalizaCompra">Finalizar Compra</a>
     `;
   contenedorCarrito.appendChild(totalizador);
@@ -186,4 +192,24 @@ const EditarCarrito = (id, Carrito, cantidad) => {
   }
   return Carrito;
 };
+
+// Modifica cantidades
+
+window.sumarCantidad = (e) => {
+  Carrito[e].cantidad++;
+  MostrarCarrito(Carrito);
+}
+
+window.restarCantidad = (e) => {
+  Carrito[e].cantidad--;
+  MostrarCarrito(Carrito);
+}
+
+window.borrarElemento = (e) => {
+  Carrito[e].cantidad = 0;
+  MostrarCarrito(Carrito);
+}
+
+
+
 
