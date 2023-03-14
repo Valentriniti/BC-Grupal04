@@ -3,6 +3,7 @@
 let list =document.getElementById("menu");
 let button=document.getElementById("burger");
 let ancho = window.innerWidth;
+// const contenedorCarrito = document.querySelector('#cardTotalizador');
 
 function toggle() {
   list.classList.toggle('header__list--show');

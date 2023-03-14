@@ -1,22 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cachureando Store - Contacto</title>
+    <title>Cachureando Store - Productos</title>
     <link rel="stylesheet" href="./css/estilo.css">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
     <link rel="manifest" href="./img/favicon/site.webmanifest">
-    <!-- Google Fonts -->
+  <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- JS -->
+  <!-- JS -->
     <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/Productos.js"></script>
+    <script type="module" src="./js/carritoCompras.js"></script>
 </head>
 
 <body>
@@ -29,31 +30,34 @@
     </a>
     <h1 class="header__title">Cachureando</h1> 
   </div> 
-  <button class = "header__menuHambur" id="burger"><img  src="./img/burger.svg" width="25px" alt="burger"></button>
+  <div class="header__iconos">
+    <button class = "header__iconocarrito iconoCarrito" ><img class="carritoComprasIcon" src="./img/icon-shopping.png" alt="icono carrito de compras">
+    <button class = "header__menuHambur" id="burger"><img  src="./img/burger.svg" width="25px" alt="burger"></button>
+  </div>
   <img  class="header__logo" src="./img/logo.svg" width="200" alt="Logo Cachureos">
   
   <!--  nav -->
   <nav class="header__nav navFix"   role="navigation">
       <ul class="header__list header__list--hide" id="menu">
         <li class="header__item">
-          <a class="header__link" href="./index.html">Inicio</a>
+          <a class="header__link" aria-current="page" href="./index.html">Inicio</a>
         </li>
         <li class="header__item">
           <a class="header__link" href="./index.html#quienessomos">Somos</a>
         </li>
         <li class="header__item">
-          <a class="header__link" href="./productos.html">Productos</a>
+          <a class="header__link--active" href="./productos.html">Productos</a>
         </li>
         <li class="header__item">
-          <a class="header__link--active" href="./formulario.html">Contacto</a>
+          <a class="header__link" href="./formulario.html">Contacto</a>
         </li>
-        <li class="header__item">
-          <img class="carritoCompras" src="./img/icon-shopping.png" alt="icono carrito de compras" >
+        <li class="header__item iconocarritoinNav iconoCarrito" >
+          <img class="carritoComprasIcon" src="./img/icon-shopping.png" alt="icono carrito de compras"  id="iconoCarrito">
         </li>
       </ul>
-      <div id="cardTotalizador"></div>
-  </nav>    
-</header>
+      <div id="cardTotalizador" class="contCarritoHide"></div>
+    </nav>    
+  </header>
 
 <!-- Main -->
     <main>

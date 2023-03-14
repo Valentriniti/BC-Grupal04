@@ -261,11 +261,9 @@ img {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0 0 0.7rem 0.7rem;
-  position: absolute;
-  right: 5rem;
-  width: 24rem;
-  min-height: 10rem;
-  max-height: 90vh;
+  max-width: 35rem;
+  margin: 0 auto;
+  max-height: 50vh;
   overflow-y: scroll;
   font-size: 1em;
   padding: 1em;
@@ -289,7 +287,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 0;
 }
 
@@ -301,7 +299,7 @@ img {
 }
 
 .imagenyTitulo {
-  width: 5em;
+  width: 4em;
 }
 
 .centrado {
@@ -313,6 +311,8 @@ img {
 
 .centradoFlex {
   display: flex;
+  width: 3.5em;
+  height: 1.5em;
 }
 
 .sinProductos {
@@ -326,8 +326,8 @@ img {
 }
 
 .cantidadenCarrito {
-  font-size: 1.2em;
-  margin: 0.2em 0.3em 0 0;
+  font-size: 1em;
+  margin: 0.4em 0.3em 0 0;
 }
 
 .sumaCantidadCarrito {
@@ -358,6 +358,52 @@ img {
   font-size: 0.9em;
 }
 
+@media screen and (min-width: 768px) {
+  #cardTotalizador {
+    position: absolute;
+    right: 5rem;
+    width: 24rem;
+    min-height: 10rem;
+    max-height: 90vh;
+    font-size: 1em;
+    padding: 1em;
+    z-index: 200;
+  }
+  #cardTotalizador img {
+    width: 3rem;
+  }
+  .card-producto {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .titulocarrito {
+    font-size: 0.8em;
+  }
+  .imagenyTitulo {
+    width: 5em;
+  }
+  .sinProductos {
+    font-size: 1.1rem;
+    margin: 1.5em 2em;
+  }
+  .tituloEnCarro {
+    width: 50%;
+  }
+  .cantidadenCarrito {
+    font-size: 1.2em;
+    margin: 0.2em 0.3em 0 0;
+  }
+  .modificaCantidad {
+    height: auto;
+    max-height: 1.4em;
+    margin: 0.3em 0 0 0.2em;
+    width: 3em;
+    padding: 0.1 0.1em;
+  }
+  .montoaPagar {
+    font-size: 0.9em;
+  }
+}
 #carousel {
   padding-top: 3.2em;
 }
@@ -460,8 +506,15 @@ input[type=range]::-webkit-slider-thumb {
 .header__logo {
   display: none;
 }
+.header__iconos {
+  margin-top: 0.5em;
+}
+.header__iconocarrito {
+  padding-right: 1em;
+}
 .header__menuHambur {
   padding-right: 1em;
+  margin-left: 1em;
 }
 .header__item {
   margin: 0 1.5em;
@@ -479,6 +532,9 @@ input[type=range]::-webkit-slider-thumb {
 }
 .headerlist--show {
   display: flex;
+}
+.header .iconocarritoinNav {
+  display: none;
 }
 
 /* Media Queries */
@@ -510,6 +566,9 @@ input[type=range]::-webkit-slider-thumb {
     height: 5em;
     border-bottom: 1px solid #00ad91;
   }
+  .header__iconocarrito {
+    display: none;
+  }
   .header__menuHambur {
     display: none;
   }
@@ -518,6 +577,9 @@ input[type=range]::-webkit-slider-thumb {
   }
   .header__list--hide {
     display: flex;
+  }
+  .header .iconocarritoinNav {
+    display: block;
   }
 }
 .footer {

@@ -6,7 +6,7 @@ import Productos from './Productos.js';
 
 const contenedorProductos = document.querySelector('.contenedorCards');
 const contenedorCarrito = document.querySelector('#cardTotalizador');
-const iconoCarrito = document.querySelector('#iconoCarrito');
+const iconoCarrito = document.querySelectorAll('.iconoCarrito');
 
 // Si hay elementos en local storage, remplaza el Carrito []
 let Carrito = JSON.parse(localStorage.getItem('Carrito')) || [];
@@ -169,18 +169,20 @@ const MostrarCarrito = (Carrito) => {
 };
   
 //Muestra u oculta el contenedor del carrito
-iconoCarrito.addEventListener('click', () => {
-  contenedorCarrito.classList.toggle('contCarritoHide');
-  // Carga  los datos del local storage
-  MostrarCarrito(Carrito);
-
-  // Si el carrito no tiene elementos, agrega "no hay productos"
-  if (!contenedorCarrito.firstChild) {
-    const p = document.createElement('p');
-    p.textContent = ' No hay productos en el carrito';
-    contenedorCarrito.append(p);
-  }
-});
+iconoCarrito.forEach((carrito) => {
+  carrito.addEventListener('click', () => {
+    contenedorCarrito.classList.toggle('contCarritoHide');
+    // Carga  los datos del local storage
+    MostrarCarrito(Carrito);
+    
+    // Si el carrito no tiene elementos, agrega "no hay productos"
+    if (!contenedorCarrito.firstChild) {
+      const p = document.createElement('p');
+      p.textContent = ' No hay productos en el carrito';
+      contenedorCarrito.append(p);
+    }
+  });
+})
 
 // Editar carrito recibe  el id(codigoPorducto), el arreglo y la cantidad que se irá actualizando
 
