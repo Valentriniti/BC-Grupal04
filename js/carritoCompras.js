@@ -26,7 +26,7 @@ const RellenarProductos = (Productos) => {
             <p class="cod_producto">Código: ${codigo}</p>
             <p class="card-text card__description">${descripcion}</p>
             <p class="price_producto">${precio}</p>
-            <label class="form-label" for="cantProducto">Cantidad:<input type="number" value = "1" class="form-control" /></label>
+            <label class="form-label" for="cantProducto">Cantidad:<input type="number" value = "1" class="form-control" min="0" /></label>
           </div>
           <div class="card__end">
             <a href="#" class="button--secondary button--card">Agregar al Carro</a>
@@ -66,9 +66,9 @@ cards.forEach((card) => {
 
 const AgregarAlCarrito = (nombre, codigoProducto, imagenProducto, valorProducto, cantidad ) => {
   // Some revisa si el producto esta en el carrito , si es true se ejecuta Editar carrito (aumenta cantidad) si no, se ejecuta Push y se agrega al carrito
-  if (Carrito.some((producto) => producto.codigoProducto == codigoProducto)) {
+  if (cantidad > 0 && (Carrito.some((producto) => producto.codigoProducto == codigoProducto))) {
     EditarCarrito(codigoProducto, Carrito, cantidad);
-  } else {
+  } else if (cantidad>0) {
     Carrito.push({nombre, codigoProducto, imagenProducto, valorProducto, cantidad});   
   }
 };
