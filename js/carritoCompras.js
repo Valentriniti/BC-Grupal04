@@ -37,7 +37,10 @@ const RellenarProductos = (Productos) => {
   });
 };
 
-RellenarProductos(Productos);
+if (contenedorProductos) {
+  RellenarProductos(Productos);
+}
+
 
 //Contenedor de las Cards
 const cards = document.querySelectorAll('.card');
