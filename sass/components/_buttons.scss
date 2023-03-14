@@ -58,15 +58,17 @@
 
 .finalizaCompra{
     display: block;
+    padding: 0.5em 0em;
     text-align: center;
     text-transform: uppercase;
     border-radius: 5px;
     @include mixins.border;
     margin: 1em auto;
-    font-size: .8em;
+    font-size: variables.$font-xS;
+    font-weight: variables.$wfont-thin;
     letter-spacing: 1px;
     width: 100%;
-    
+    cursor: pointer;
 }
 
 /* Media Queries */
