@@ -130,7 +130,7 @@ const MostrarCarrito = (Carrito) => {
             <p class= "montoaPagar">Subtotal:</p>
             <p class= "montoaPagar">Impuesto: </p>  
             <p class= "montoaPagar">Total: </p>
-            <a class = "finalizaCompra">Finalizar Compra</a>
+            <a class= "finalizaCompra"  href= "./formulario-compra.html">Finalizar Compra</a>
           `;
         contenedorCarrito.appendChild(div);    
       }); 
@@ -166,7 +166,7 @@ const MostrarCarrito = (Carrito) => {
       <p class= "montoaPagar">Subtotal: $${formatearDinero(Subtotal)} </p>
       <p class= "montoaPagar">Impuesto: $${formatearDinero(Impuestos)} </p>  
       <p class= "montoaPagar">Total: $${formatearDinero(Total)} </p>
-      <a class = "finalizaCompra">Finalizar Compra</a>
+      <a class = "finalizaCompra"  href= "./formulario-compra.html">Finalizar Compra</a>
     `;
   contenedorCarrito.appendChild(totalizador);
 };
@@ -207,13 +207,30 @@ window.sumarCantidad = (e) => {
 
 window.restarCantidad = (e) => {
   Carrito[e].cantidad--;
+  if (Carrito[e].cantidad == 0){
+    borrarElemento(e);
+  }
   MostrarCarrito(Carrito);
 }
 
 window.borrarElemento = (e) => {
-  Carrito[e].cantidad = 0;
+  Carrito.splice(e,1);
   MostrarCarrito(Carrito);
+
 }
+
+
+  //Mostar los productos en el formulario-compra
+
+let contenedorResumenCarrito = document.getElementById("contenedor-resumen");
+
+contenedorResumenCarrito.appendChild(contenedorCarrito);
+
+MostrarCarrito(Carrito);
+
+
+
+
 
 
 
