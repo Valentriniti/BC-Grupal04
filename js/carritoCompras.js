@@ -253,7 +253,9 @@ window.borrarElemento = (e) => {
 
 let contenedorResumenCarrito = document.getElementById("contenedor-resumen");
 
+if (contenedorResumenCarrito) {
 contenedorResumenCarrito.appendChild(contenedorCarrito);
+}
 
 MostrarCarrito(Carrito);
 
