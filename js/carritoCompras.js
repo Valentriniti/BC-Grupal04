@@ -163,9 +163,9 @@ const MostrarCarrito = (Carrito) => {
   const totalizador = document.createElement('div');
   totalizador.classList = 'total';
   totalizador.innerHTML = `
-      <p class= "montoaPagar" id="subtotal">Subtotal: $${formatearDinero(Subtotal)} </p>
-      <p class= "montoaPagar" id="impuesto">Impuesto: $${formatearDinero(Impuestos)} </p>  
-      <p class= "montoaPagar" id="total">Total: $${formatearDinero(Total)} </p>
+      <p class= "montoaPagar">Subtotal: $${formatearDinero(Subtotal)} </p>
+      <p class= "montoaPagar">Impuesto: $${formatearDinero(Impuestos)} </p>  
+      <p class= "montoaPagar">Total: $${formatearDinero(Total)} </p>
       <a class = "finalizaCompra"  href= "./formulario-compra.html">Finalizar Compra</a>
     `;
   contenedorCarrito.appendChild(totalizador);
@@ -242,10 +242,6 @@ let contenedorResumenCarrito = document.getElementById("contenedor-resumen");
 contenedorResumenCarrito.appendChild(contenedorCarrito);
 
 MostrarCarrito(Carrito);
-
-
-
-
 
 
 
