@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- JS -->
     <script src="./js/main.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script type="module" src="./js/Productos.js"></script>
     <script type="module" src="./js/carritoCompras.js"></script>
 </head>
@@ -79,19 +81,19 @@
       <h2 class="section__title">Datos de Envío</h2>
       <p class="section__text">Ingresa aquí tus datos de envío para poder finalizar tu compra</p>
 
-      <div class="form">
-          <input id="form-fullname" class="form__input" type="text" class="form-control" placeholder="Nombre completo">
-          <input id="form-email" class="form__input" type="email" placeholder="Email">
-          <input id="form-phone" class="form__input" type="text" placeholder="Teléfono">
-          <input id="form-direction" class="form__input" type="text" placeholder="Dirección">
-          <input id="form-comuna" class="form__input" type="text" placeholder="Comuna">
-          <input id="form-region" class="form__input" type="text" placeholder="Región">
+      <form class="form">
+          <input id="form-fullname" class="form__input" name="nombre" type="text" class="form-control" placeholder="Nombre completo">
+          <input id="form-email" class="form__input" name="email" type="email" placeholder="Email">
+          <input id="form-phone" class="form__input" name="telefono" type="text" placeholder="Teléfono">
+          <input id="form-direction" class="form__input" name="direccion" type="text" placeholder="Dirección">
+          <input id="form-comuna" class="form__input" name="comuna" type="text" placeholder="Comuna">
+          <input id="form-region" class="form__input"  name="region" type="text" placeholder="Región">
 
-          <textarea id="form-text" class="form__textarea" rows="3" placeholder="Escribe aquí tu comentario"></textarea>
-          <button id="form-submitcart" type="submit" name="submit" class="button form__button button--primary js-scroll fade-in">Enviar
+          <textarea id="form-text" class="form__textarea" rows="3" placeholder="Agrega Detalles de tu envío si es necesario" name="detalles"></textarea>
+          <button id="form-submitcart" type="button" name="submit" class="button form__button button--primary js-scroll fade-in">Enviar
           <ion-icon name="send-outline" class="form__icon" role="img" aria-label="send outline"></ion-icon>
           </button>
-      </div>        
+        </form>        
   </section>
 
     </main>
@@ -129,6 +131,11 @@
     </div>  
 
   </footer>
+
+  <!-- Inicializa EmailJS -->
+  <script>
+    emailjs.init('e18cPUWULRRLR1iJI');
+  </script>
   
     <!-- Link iconografia botones -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -137,6 +144,7 @@
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
     <script src="./js/jquery.goup.js"></script>
     <script src="./js/valid_formcart.js"></script>
+    <script src="./js/recibo_compra.js"></script>
 
 </body>
 

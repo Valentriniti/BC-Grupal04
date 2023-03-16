@@ -45,7 +45,7 @@ let inputText = document.querySelector("#form-text");
       alert('Ingrese Región');
     }
      else {
-      alert('¡Guardado exitosamente!')
+      enviarEmail();
     }
   }
   
