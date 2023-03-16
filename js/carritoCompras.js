@@ -163,12 +163,27 @@ const MostrarCarrito = (Carrito) => {
   const totalizador = document.createElement('div');
   totalizador.classList = 'total';
   totalizador.innerHTML = `
-      <p class= "montoaPagar">Subtotal: $${formatearDinero(Subtotal)} </p>
-      <p class= "montoaPagar">Impuesto: $${formatearDinero(Impuestos)} </p>  
-      <p class= "montoaPagar">Total: $${formatearDinero(Total)} </p>
+      <p class= "montoaPagar" id="subtotal">Subtotal: $${formatearDinero(Subtotal)} </p>
+      <p class= "montoaPagar" id="impuesto">Impuesto: $${formatearDinero(Impuestos)} </p>  
+      <p class= "montoaPagar" id="total">Total: $${formatearDinero(Total)} </p>
       <a class = "finalizaCompra"  href= "./formulario-compra.html">Finalizar Compra</a>
     `;
   contenedorCarrito.appendChild(totalizador);
+
+
+//Areglo valores finales
+
+const valoresFinales = [{
+Subtotal,
+Impuestos,
+Total,
+}];
+
+    // Agregar al local storage
+    localStorage.setItem('valoresFinales', JSON.stringify(valoresFinales));
+    //Obtener del local storage
+    let valorFinal = JSON.parse(localStorage.getItem('valoresFinales'));
+
 };
   
 //Muestra u oculta el contenedor del carrito
@@ -227,6 +242,8 @@ let contenedorResumenCarrito = document.getElementById("contenedor-resumen");
 contenedorResumenCarrito.appendChild(contenedorCarrito);
 
 MostrarCarrito(Carrito);
+
+
 
 
 
