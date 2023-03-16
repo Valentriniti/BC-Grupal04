@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- JS -->
     <script src="./js/main.js" defer></script>
+    <script src="./js/recibo_compra.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script type="module" src="./js/Productos.js"></script>
     <script type="module" src="./js/carritoCompras.js"></script>
 </head>
@@ -129,6 +132,11 @@
     </div>  
 
   </footer>
+
+  <!-- Inicializa EmailJS -->
+  <script>
+    emailjs.init('e18cPUWULRRLR1iJI');
+  </script>
   
     <!-- Link iconografia botones -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
