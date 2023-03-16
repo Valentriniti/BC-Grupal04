@@ -46,11 +46,24 @@ if (contenedorProductos) {
 //Contenedor de las Cards
 const cards = document.querySelectorAll('.card');
 
+
+
 cards.forEach((card) => {
-  card.addEventListener('click', (e) => {
-    contenedorCarrito.classList.remove('contCarritoHide');
+  /* console.dir(card.children[1].children[0].textContent) */
+  
+
+
+  card.lastElementChild.firstElementChild.addEventListener('click', (e) => {
+    let nombre = card.children[1].children[0].textContent;
+    let codigoProducto = card.children[1].children[1].textContent;
+    let imagenProducto = card.children[0].src;
+    let valorProducto = card.children[1].children[3].textContent.replace(/\D/g,'');
+    let cantidad = card.children[1].children[5].children[0].value
     e.preventDefault();
-    if (e.target.classList.contains('button--secondary')) {
+    contenedorCarrito.classList.remove('contCarritoHide');
+    AgregarAlCarrito( nombre, codigoProducto, imagenProducto, valorProducto, Number(cantidad));
+    MostrarCarrito(Carrito);
+    /* if (e.target.classList.contains('button--secondary')) {
       let nombre = e.currentTarget.querySelector('.card-title').textContent;
       let codigoProducto = e.currentTarget.querySelector('.cod_producto').textContent;
       let imagenProducto = e.currentTarget.querySelector('img').src;
@@ -58,7 +71,7 @@ cards.forEach((card) => {
       let cantidad = e.currentTarget.querySelector('input');
       AgregarAlCarrito( nombre, codigoProducto, imagenProducto, valorProducto, Number(cantidad.value));
       MostrarCarrito(Carrito);
-    }
+    } */
   });
 });
 
@@ -240,7 +253,9 @@ window.borrarElemento = (e) => {
 
 let contenedorResumenCarrito = document.getElementById("contenedor-resumen");
 
+if (contenedorResumenCarrito) {
 contenedorResumenCarrito.appendChild(contenedorCarrito);
+}
 
 MostrarCarrito(Carrito);
 
