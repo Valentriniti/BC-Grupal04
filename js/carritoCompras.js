@@ -15,7 +15,7 @@ let Carrito = JSON.parse(localStorage.getItem('Carrito')) || [];
 
 const RellenarProductos = (Productos) => { 
   Productos.forEach((producto) => {
-    const { codigo, descripcion, imagen, nombre, precio } = producto;
+    const { codigo, descripcion, imagen, nombre, precio, precioCalculado } = producto;
     const div = document.createElement('div');
     div.classList = 'col g-5 hidden';
     div.innerHTML = `
@@ -26,6 +26,7 @@ const RellenarProductos = (Productos) => {
             <p class="cod_producto">Código: ${codigo}</p>
             <p class="card-text card__description">${descripcion}</p>
             <p class="price_producto">${precio}</p>
+            <p class="price" hidden>${precioCalculado}</p>
             <label class="form-label" for="cantProducto">Cantidad:<input type="number" value = "1" class="form-control" min="0" /></label>
           </div>
           <div class="card__end">
@@ -53,7 +54,7 @@ cards.forEach((card) => {
       let nombre = e.currentTarget.querySelector('.card-title').textContent;
       let codigoProducto = e.currentTarget.querySelector('.cod_producto').textContent;
       let imagenProducto = e.currentTarget.querySelector('img').src;
-      let valorProducto = e.currentTarget.querySelector('.price_producto').textContent;
+      let valorProducto = e.currentTarget.querySelector('.price').textContent;
       let cantidad = e.currentTarget.querySelector('input');
       AgregarAlCarrito( nombre, codigoProducto, imagenProducto, valorProducto, Number(cantidad.value));
       MostrarCarrito(Carrito);
