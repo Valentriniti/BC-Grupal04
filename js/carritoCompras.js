@@ -169,6 +169,21 @@ const MostrarCarrito = (Carrito) => {
       <a class = "finalizaCompra"  href= "./formulario-compra.html">Finalizar Compra</a>
     `;
   contenedorCarrito.appendChild(totalizador);
+
+
+//Areglo valores finales
+
+const valoresFinales = [{
+Subtotal,
+Impuestos,
+Total,
+}];
+
+    // Agregar al local storage
+    localStorage.setItem('valoresFinales', JSON.stringify(valoresFinales));
+    //Obtener del local storage
+    let valorFinal = JSON.parse(localStorage.getItem('valoresFinales'));
+
 };
   
 //Muestra u oculta el contenedor del carrito
@@ -227,8 +242,6 @@ let contenedorResumenCarrito = document.getElementById("contenedor-resumen");
 contenedorResumenCarrito.appendChild(contenedorCarrito);
 
 MostrarCarrito(Carrito);
-
-
 
 
 
