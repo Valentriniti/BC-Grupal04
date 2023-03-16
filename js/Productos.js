@@ -1,3 +1,10 @@
+  // formatear dinero
+const formatearDinero = (dinero) => {
+    return new Intl.NumberFormat('ES', {
+    style: 'currency',
+    currency: 'clp'
+    }).format(dinero);
+};
 
 
 const Productos = [
@@ -6,7 +13,8 @@ const Productos = [
         nombre: 'Futón Clásico',
         codigo: '01',
         descripcion: 'Futón de tela gris grafito con base metálica reforzada. Dimensiones 170 x 70 x 81 cm.',
-        precio: 300000,
+        precio: "$" + formatearDinero(300000),
+        precioCalculado: 300000,
         cantidad: 0,
     },
     {
@@ -14,7 +22,8 @@ const Productos = [
         nombre: 'Lámpara mesa',
         codigo: '02',
         descripcion: 'Lámpara metal negro mate. Dimensiones 45 x 20 x 20 cm.',
-        precio: 25000,
+        precio: "$" + formatearDinero(25000),
+        precioCalculado: 25000,
         cantidad: 0,
     },
     {
@@ -22,7 +31,8 @@ const Productos = [
         nombre: 'Silla Velvet',
         codigo: '03',
         descripcion: 'Silla tela aterciopelada gris grafito con base de madera. Dimensiones 100 x 60 x 70cm ',
-        precio: 100000,
+        precio: "$" + formatearDinero(100000),
+        precioCalculado: 100000,
         cantidad: 0,
     },
     {
@@ -30,7 +40,8 @@ const Productos = [
         nombre: 'Estante Victoria',
         codigo: '04',
         descripcion: 'Estante madera teñida negro mate. Dimensiones 200 x 80 x 40 cm.',
-        precio: 420000,
+        precio: "$" + formatearDinero(420000),
+        precioCalculado: 420000,
         cantidad: 0,
     },
     {
@@ -38,7 +49,8 @@ const Productos = [
         nombre: 'Lampara Albert',
         codigo: '05',
         descripcion: 'Lámpara de pie con base metálida y pantalla semi rigida. Dimensiones 150 x 40 x 60cm.',
-        precio: 80000,
+        precio: "$" + formatearDinero(80000),
+        precioCalculado: 80000,
         cantidad: 0,
     },
     {
@@ -46,7 +58,8 @@ const Productos = [
         nombre: 'Silla Coral',
         codigo: '06',
         descripcion: 'Silla tela aterciopelada verde. Soporte madera color negro mate. Dimensiones 90 x 60 x 70cm.',
-        precio: 120000,
+        precio: "$" + formatearDinero(120000),
+        precioCalculado: 120000,
         cantidad: 0,
     },
     {
@@ -54,7 +67,8 @@ const Productos = [
         nombre: 'Sofá Sofía',
         codigo: '07',
         descripcion: 'Sofá de 3 cuerpos blanco invierno, Soporte madera color natiral. Dimensiones 170 x 70 x 81 cm.',
-        precio: 500000,
+        precio: "$" + formatearDinero(500000),
+        precioCalculado: 500000,
         cantidad: 0,
     },
     {
@@ -62,7 +76,8 @@ const Productos = [
         nombre: 'Closet Dark Nordic',
         codigo: '08',
         descripcion: 'Closet de dos puerta y dos cajones cierre suave. Melamina 18mm negro mate y alamo. Dimensiones 200 x 98 x 58 cm.',
-        precio: 380000,
+        precio: "$" + formatearDinero(380000),
+        precioCalculado: 380000,
         cantidad: 0,
     },
     {
@@ -70,7 +85,8 @@ const Productos = [
         nombre: 'Mesa Dark Thin',
         codigo: '09',
         descripcion: 'Mesa comedor negro mate, superficie melamina 18mm y base metálica. Dimensiones 110 x 67 x 75 cm.',
-        precio: 200000,
+        precio: "$" + formatearDinero(200000),
+        precioCalculado: 200000,
         cantidad: 0,
     },
     {
@@ -78,7 +94,8 @@ const Productos = [
         nombre: 'Escritorio Dark Nordic',
         codigo: '10',
         descripcion: 'Escritorio con dos cajones cierre suave. Superficie de madera tinte negro y base metálica. Dimensiones 110 x 60 x 75 cm.',
-        precio: 160000,
+        precio: "$" + formatearDinero(160000),
+        precioCalculado: 160000,
         cantidad: 0,
     },
     {
@@ -86,7 +103,8 @@ const Productos = [
         nombre: 'Escritorio Brown Mini',
         codigo: '11',
         descripcion: 'Escritorio melamina 18mm color chocolate y base metal. Cajón cierre suave. Dimensiones 65 x 40 x 75 cm.',
-        precio: 110000,
+        precio: "$" + formatearDinero(110000),
+        precioCalculado: 110000,
         cantidad: 0,
     },
     {
@@ -94,7 +112,8 @@ const Productos = [
         nombre: 'Silla Dark Thin',
         codigo: '12',
         descripcion: 'Silla estructura metálica negro mate. Asiento y respaldo madera tinte negro. Dimensiones 55 x 53 x 78 cm.',
-        precio: 100000,
+        precio: "$" + formatearDinero(100000),
+        precioCalculado: 100000,
         cantidad: 0,
     },
 ]
