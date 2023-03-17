@@ -94,7 +94,7 @@ function enviarEmail(){
     crearDatoContacto("", "", detalle);
     crearDatoContacto("Nombre",inputFullname.value, detalle);
     crearDatoContacto("Email",inputEmail.value, detalle);
-    crearDatoContacto("Dirección",inputDirection.value, detalle);
+    crearDatoContacto("Dirección",inputAddress.value, detalle);
     crearDatoContacto("Comuna",inputComuna.value, detalle);
     crearDatoContacto("Region",inputRegion.value, detalle);
     crearDatoContacto("Texto",inputText.value, detalle);

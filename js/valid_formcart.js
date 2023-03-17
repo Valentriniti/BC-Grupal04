@@ -5,7 +5,7 @@ const regExPhone = /^[0-9+/s]{8,12}$/;
 let inputFullname = document.querySelector("#form-fullname");
 let inputEmail = document.querySelector("#form-email");
 let inputPhone = document.querySelector("#form-phone");
-let inputDirection = document.querySelector("#form-direction");
+let inputAddress = document.querySelector("#form-address");
 let inputComuna = document.querySelector("#form-comuna");
 let inputRegion = document.querySelector("#form-region");  
 let inputText = document.querySelector("#form-text");
@@ -35,7 +35,7 @@ let inputText = document.querySelector("#form-text");
     } else if (!regExPhone.test(inputPhone.value)) {
       alert("El teléfono debe incluir al menos 8 números, ejemplo: +56933333333");
       return false;
-    } else if (!inputDirection.value) {
+    } else if (!inputAddress.value) {
       alert('Ingrese Dirección');
       return false;
     } else if (!inputComuna.value) {
